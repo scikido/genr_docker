@@ -34,7 +34,7 @@ async def get_browser():
         if browser_instance is None:
             print("Launching browser...")
             browser_instance = await launch(
-                # executablePath=path,
+                executablePath=os.getenv("CHROME_BIN"),
                 options={"args": ["--no-sandbox", "--disable-setuid-sandbox", "--disable-extensions", "--disable-infobars", "--disable-notifications"]}
             )
             print("Browser launched.")
@@ -262,6 +262,3 @@ async def api_retrieve_telegram_messages():
         print(f"api_retrieve_telegram_messages took {end_time - start_time} seconds.")
         return jsonify({"error": "Internal Server Error"}), 500
 
-if __name__ == "__main__":
-    print("Starting the application...")
-    app.run()
