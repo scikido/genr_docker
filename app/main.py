@@ -14,7 +14,7 @@ from pyppeteer import launch
 app = Quart(__name__)
 app = cors(app, allow_origin="*")  # Allow requests from any origin
 
-load_dotenv(dotenv_path='./app/.env')
+load_dotenv()
 
 browser_instance = None
 browser_lock = asyncio.Lock()
