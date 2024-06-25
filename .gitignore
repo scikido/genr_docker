@@ -1,0 +1,13 @@
+# Quart app
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+.venv/
+.env
+
+# Docker
+.dockerignore
+Dockerfile
+docker-compose.yml
